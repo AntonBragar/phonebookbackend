@@ -1,0 +1,20 @@
+### Get all persons
+GET http://localhost:3001/api/persons/
+Accept: application/json
+
+### Get single person
+GET http://localhost:3001/api/persons/1
+Accept: application/json
+
+### Delete person by ID
+DELETE http://localhost:3001/api/persons/1
+Accept: application/json
+
+### Post a new person
+POST http://localhost:3001/api/persons/
+content-type: application/json
+
+{
+  "name": "Boris Britva",
+  "number": "+1-877-05-22-11"
+}
