@@ -15,7 +15,6 @@ morgan.token('info', (request) =>
         : null
 )
 
-
 let contacts = [
     {
         "id": 1,
@@ -72,7 +71,6 @@ app.delete('/api/persons/:id', (req, res) => {
 app.post('/api/persons', (req, res) => {
     const body = req.body
     const duplicateName = contacts.find(contact => contact.name.toLowerCase().includes(body.name.toLowerCase()))
-    console.log(duplicateName)
 
     if (!body.name || !body.number) {
         return res.status(400).json({
@@ -96,9 +94,7 @@ app.post('/api/persons', (req, res) => {
     res.json(contact)
 })
 
-
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server is running on Port: ${PORT}`)
 })
-
