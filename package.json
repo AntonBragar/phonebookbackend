@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd ../fullstackopen/part2/phonebook && npm run build && cp -r dist ../phonebookback",
+    "build:ui": "rm -rf build && cd ../fullstackopen/part2/phonebook && npm run build && cp -r dist ../../../phonebookback",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "repository": {
@@ -22,7 +22,11 @@
   "homepage": "https://github.com/AntonBragar/phonebookbackend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongodb": "^6.0.0",
+    "mongoose": "^7.5.0",
+    "mongoose-unique-validator": "^4.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
