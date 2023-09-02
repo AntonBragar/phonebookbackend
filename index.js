@@ -72,7 +72,6 @@ app.post('/api/persons', (request, response, next) => {
         .then(savedPerson => savedPerson.toJSON())
         .then(savedAndFormattedPerson => {
             response.json(savedAndFormattedPerson)
-            console.log(savedAndFormattedPerson)
         })
         .catch(error => next(error))
 })
@@ -97,7 +96,7 @@ app.put('/api/persons/:id', (request, response, next) => {
 // Delete person by ID
 app.delete('/api/persons/:id', (request, response, next) => {
     Person
-        .findOneAndDelete({ _id: request.params.id })
+        .findOneAndDelete({ _id: request.params.id})
         .then(result => {
             if (result) {
                 response.status(204).end()
